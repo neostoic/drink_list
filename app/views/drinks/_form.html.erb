@@ -1,0 +1,27 @@
+<%= form_for @drink do |f| %>
+  <% if @post.errors.any? %>
+    <h2><%= pluralize(@drink.errors.count, "error") %>:</h2>
+    <ul>
+      <% @drink.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :recipe %><br>
+  <%= f.collection_select :recipe_id, Recipe.all, :id, :name %>
+
+  <br>
+
+  <%= f.label :alcohol %><br>
+  <%= f.collection_select :alcohol_id, Alcohol.all, :id, :name %>
+
+  <br>
+
+  <%= f.label :place %><br>
+  <%= f.collection_select :place_id, Place.all, :id, :name %>
+
+  <br>
+
+  <%= f.submit (@drink.new_record? ? "Create Drink" : "Update Drink", class: "button") %>
+<% end %>

@@ -10,9 +10,9 @@ class RecipesController < ApplicationController
 
   def create
     if @recipe.save
-      redirect_to recipe_path(@recipe.id)
+      redirect_to @recipe, notice: "Success! Recipe saved."
     else
-      render :new
+      render :new, notice: "Oops. Unable to save recipe."
     end
   end
 

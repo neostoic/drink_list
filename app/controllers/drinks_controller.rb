@@ -14,9 +14,9 @@ class DrinksController < ApplicationController
 
   def create
     if @drink.save
-      redirect_to drink_path(@drink.id)
+      redirect_to @drink, notice: "Success! Drink saved."
     else
-      render :new
+      render :new, notice: "Oops. Unable to save drink."
     end
   end
 

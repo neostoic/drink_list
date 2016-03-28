@@ -9,10 +9,10 @@ class PlacesController < ApplicationController
   end
 
   def create
-    if @alcohol.save
-      redirect_to alcohol_path(@alcohol.id)
+    if @place.save
+      redirect_to @place, notice: "Success! Place saved."
     else
-      render :new
+      render :new, notice: "Oops. Unable to save recipe."
     end
   end
 

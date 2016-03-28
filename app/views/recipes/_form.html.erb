@@ -1,0 +1,17 @@
+<%= form_for @recipe do |f| %>
+  <% if @post.errors.any? %>
+    <h2><%= pluralize(@recipe.errors.count, "error") %>:</h2>
+    <ul>
+      <% @recipe.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+
+  <br>
+
+  <%= f.submit (@recipe.new_record? ? "Create Recipe" : "Update Recipe", class: "button") %>
+<% end %>
