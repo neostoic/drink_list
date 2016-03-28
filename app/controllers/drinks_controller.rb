@@ -1,11 +1,22 @@
 class DrinksController < ApplicationController
-  before_action :find_drink, except: [:index, :new]
+  before_action :find_drink, except: [:index, :new, :create]
 
   def index
-    @drinks = Drink.all
+    @drinks = Drink.all.order("price asc")
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @drinks }
+      format.xml  { render xml:  @drinks }
+    end
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @drink }
+      format.xml  { render xml:  @drink }
+    end
   end
 
   def new
@@ -13,10 +24,12 @@ class DrinksController < ApplicationController
   end
 
   def create
+    @drink = Drink.new(drink_params)
+
     if @drink.save
-      redirect_to @drink, notice: "Success! Drink saved."
+      redirect_to @drink
     else
-      render :new, notice: "Oops. Unable to save drink."
+      render :new
     end
   end
 
@@ -24,9 +37,16 @@ class DrinksController < ApplicationController
   end
 
   def update
+    if @drink.update(drink_params)
+      redirect_to @drink
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @post.destroy
+    redirect_to root_path
   end
 
   private
@@ -36,6 +56,6 @@ class DrinksController < ApplicationController
   end
 
   def drink_params
-    params.require(:drink).permit(:name, :price, :place_id, :alcohol_id)
+    params.require(:drink).permit(:name, :price, :place_id, :alcohol_id, :recipe_id)
   end
 end

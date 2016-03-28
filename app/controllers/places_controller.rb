@@ -1,7 +1,14 @@
 class PlacesController < ApplicationController
-  before_action :find_place, except: [:index, :new]
+  before_action :find_place, except: [:index, :new, :create]
 
   def show
+    @place_drinks = @place.drinks
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @place_drinks }
+      format.xml  { render xml:  @place_drinks }
+    end
   end
 
   def new
@@ -9,10 +16,12 @@ class PlacesController < ApplicationController
   end
 
   def create
+    @place = Place.new(place_params)
+
     if @place.save
-      redirect_to @place, notice: "Success! Place saved."
+      redirect_to @place
     else
-      render :new, notice: "Oops. Unable to save recipe."
+      render :new
     end
   end
 
@@ -20,9 +29,16 @@ class PlacesController < ApplicationController
   end
 
   def update
+    if @place.update(place_params)
+      redirect_to @place
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @place.destroy
+    redirect_to root_path
   end
 
   private

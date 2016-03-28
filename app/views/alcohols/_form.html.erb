@@ -1,17 +1,17 @@
 <%= form_for @alcohol do |f| %>
-  <% if @post.errors.any? %>
+<!--   <% if @alcohol.errors.any? %>
     <h2><%= pluralize(@alcohol.errors.count, "error") %>:</h2>
     <ul>
       <% @alcohol.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
-  <% end %>
+  <% end %> -->
 
   <%= f.label :name %><br>
   <%= f.text_field :name %>
 
   <br>
 
-  <%= f.submit (@alcohol.new_record? ? "Create Alcohol" : "Update Alcohol", class: "button") %>
+  <%= f.submit (@alcohol.new_record? ? "Create Alcohol" : "Update Alcohol") %>
 <% end %>

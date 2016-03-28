@@ -1,12 +1,12 @@
 <%= form_for @drink do |f| %>
-  <% if @post.errors.any? %>
+<!--   <% if @drink.errors.any? %>
     <h2><%= pluralize(@drink.errors.count, "error") %>:</h2>
     <ul>
       <% @drink.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
-  <% end %>
+  <% end %> -->
 
   <%= f.label :recipe %><br>
   <%= f.collection_select :recipe_id, Recipe.all, :id, :name %>
@@ -23,5 +23,10 @@
 
   <br>
 
-  <%= f.submit (@drink.new_record? ? "Create Drink" : "Update Drink", class: "button") %>
+  <%= f.label :price %><br>
+  <%= f.number_field :price, step: 0.01 %>
+
+  <br>
+
+  <%= f.submit (@drink.new_record? ? "Create Drink" : "Update Drink") %>
 <% end %>

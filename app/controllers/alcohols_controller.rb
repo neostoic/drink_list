@@ -1,5 +1,5 @@
 class AlcoholsController < ApplicationController
-  before_action :find_alcohol, except: [:new]
+  before_action :find_alcohol, except: [:new, :create]
 
   def show
     @alcohol_drinks = @alcohol.drinks
@@ -29,6 +29,11 @@ class AlcoholsController < ApplicationController
   end
 
   def update
+    if @alcohol.update(alcohol_params)
+      redirect_to @alcohol
+    else
+      render :edit
+    end
   end
 
   def destroy
