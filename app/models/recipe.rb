@@ -1,5 +1,6 @@
 class Recipe < ActiveRecord::Base
-  has_many :drinks
+  has_many :drinks, dependent: :destroy
 
-  validates :recipe, presence: true
+  validates :name,  presence: true
+  validates :image, presence: true
 end

@@ -2,6 +2,7 @@ class DrinksController < ApplicationController
   before_action :find_drink, except: [:index, :new, :create]
 
   def index
+    # @drink  = Drink.new
     @drinks = Drink.all.order("price asc")
 
     respond_to do |format|

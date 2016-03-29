@@ -1,5 +1,6 @@
 <% @drinks.each do |drink| %>
-  <%= link_to drink.recipe.name, drink_path(drink.recipe.id) %>
+  <%= image_tag(drink.recipe.image, size: "60") %>
+  <%= link_to drink.recipe.name, recipe_path(drink.recipe.id) %>
   <%= link_to drink.alcohol.name, alcohol_path(drink.alcohol.id) %>
   <%= link_to drink.place.name, place_path(drink.place.id) %>
   <%= drink.price %>
