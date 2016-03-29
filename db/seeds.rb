@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Alcohol.create("name"=>"DonQ Cristal")
+Alcohol.create("name"=>"Black Label")
+Alcohol.create("name"=>"Grey Goose")
+Alcohol.create("name"=>"White Label")
+Alcohol.create("name"=>"Absolut Vodka")
+Alcohol.create("name"=>"DonQ Limón")
+Alcohol.create("name"=>"Jose Cuervo Gold")
+Alcohol.create("name"=>"Jose Cuervo Silver")
+Recipe.create("name"=>"Cuba Libre", "image"=>"cuba_libre.png")
+Recipe.create("name"=>"Whiskey on the Rocks", "image"=>"whiskey.png")
+Recipe.create("name"=>"Mojito", "image"=>"mojito.png")
+Recipe.create("name"=>"Margarita", "image"=>"margarita.png")
+Recipe.create("name"=>"Light Beer", "image"=>"beer.png")
+Place.create("name"=>"VIVO Beach Club", "address_link"=>"https://www.google.com.pr/maps/place/Vivo+Beach+Club/@18.447174,-66.0024343,17z/data=!3m1!4b1!4m2!3m1!1s0x8c0365cd3d5ece51:0xb19aea8ae7152516?hl=en")
+Place.create("name"=>"Palmas Station", "address_link"=>"https://www.google.com/maps/place/Palmas+Station/@18.423084,-66.146203,17z/data=!3m1!4b1!4m2!3m1!1s0x8c036bd9765da357:0x2085121556796179")
+Drink.create("alcohol_id"=>1, "place_id"=>1, "price"=> 8.00, "recipe_id"=>1)
+Drink.create("alcohol_id"=>2, "place_id"=>1, "price"=>8.00, "recipe_id"=>2)
+Drink.create("alcohol_id"=>1, "place_id"=>2, "price"=>5.75, "recipe_id"=>1)
