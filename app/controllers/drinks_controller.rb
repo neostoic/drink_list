@@ -7,6 +7,7 @@ class DrinksController < ApplicationController
     @drinks = Drink.where(nil)
     @drinks = @drinks.recipe(params[:recipe]) if params[:recipe].present?
     @drinks = @drinks.alcohol(params[:alcohol]) if params[:alcohol].present?
+    @drinks = @drinks.order("price asc")
 
     respond_to do |format|
       format.html

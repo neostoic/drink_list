@@ -13,5 +13,10 @@
 
   <br>
 
+  <%= f.label :image %><br>
+  <%= f.select :image, options_for_select({Beer: "beer.png", Whiskey: "whiskey.png", Cuba_Libre: "cuba_libre.png", Margarita: "margarita.png", Mojito: "mojito.png"}) %>
+
+  <br>
+
   <%= f.submit (@recipe.new_record? ? "Create Recipe" : "Update Recipe") %>
 <% end %>
