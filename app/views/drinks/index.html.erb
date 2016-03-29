@@ -1,7 +1,23 @@
-<% @drinks.each do |drink| %>
-  <%= image_tag(drink.recipe.image, size: "60") %>
-  <%= link_to drink.recipe.name, recipe_path(drink.recipe.id) %>
-  <%= link_to drink.alcohol.name, alcohol_path(drink.alcohol.id) %>
-  <%= link_to drink.place.name, place_path(drink.place.id) %>
-  <%= drink.price %>
-<% end %>
+<div class="filter">
+  <% @recipes.each do |recipe| %>
+    <%= link_to recipe.name, drinks_path(recipe: recipe) %>
+  <% end %>
+  <br>
+  <% @alcohols.each do |alcohol| %>
+    <%= link_to alcohol.name, drinks_path(alcohol: alcohol) %>
+  <% end %>
+</div>
+
+<div id="list">
+  <% @drinks.each do |drink| %>
+    <div class="listing clearfix">
+      <div class="image_wrapper">
+        <%= image_tag(drink.recipe.image) %>
+      </div>
+      <div class="info">
+        <div class="drink_info"><%= link_to drink.recipe.name, recipe_path(drink.recipe), class: "drink_name" %> with <%= link_to drink.alcohol.name, alcohol_path(drink.alcohol), class: "alcohol_name" %> at <%= link_to drink.place.name, place_path(drink.place), class: "place_name" %></div>
+      </div>
+      <span class="price"><%= number_to_currency(drink.price) %></span>
+    </div>
+  <% end %>
+</div>

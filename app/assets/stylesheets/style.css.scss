@@ -1,0 +1,284 @@
+@import "typekit";
+@import "variables";
+@import "place";
+
+
+body {
+  font-family: "brandon-grotesque", sans-serif;
+  padding-bottom: 9em;
+}
+
+a {
+  color: $main;
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 750px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.main_header {
+  margin: 5em 0 3em 0;
+}
+
+.logo {
+  h1 {
+    float: left;
+    margin: 0;
+    font-size: 1.7em;
+    .logo_second_word {
+      font-weight: 400;
+    }
+    a {
+      color: $main;
+      .red {
+        &:hover {
+          color: $highlight_1;
+        }
+      }
+      .yellow {
+        &:hover {
+          color: $highlight_2;
+        }
+      }
+      .light_blue {
+        &:hover {
+          color: $highlight_3;
+        }
+      }
+    }
+  }
+}
+
+// .nav {
+//   float: right;
+//   padding-top: .55em;
+//   a {
+//     margin-left: 1em;
+//     color: $secondary;
+//     text-decoration: none;
+//   }
+//   .current {
+//     font-weight: 700;
+//     color: $main;
+//   }
+// }
+
+.filter {
+  float: none;
+  text-align: center;
+  margin-bottom: 1em;
+  a {
+    color: $secondary;
+    display: inline-block;
+    text-decoration: none;
+    &:not(:last-child) {
+      margin-bottom: 1em;
+      margin-right: 1em;
+    }
+  }
+  .drink_filter {
+    &:hover {
+      color: $highlight_1;
+    }
+  }
+  .alcohol_filter {
+    &:hover {
+      color: $highlight_2;
+    }
+  }
+  .sort_filter {
+    &:hover {
+      color: $highlight_3;
+    }
+  }
+}
+
+#list {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  a {
+    text-decoration: none;
+  }
+  .listing {
+    position: relative;
+    z-index: 1;
+    display: table;
+    width: 95.5%;
+    margin-bottom: 1em;
+    padding: 1em;
+    border: 1px solid $border;
+    border-radius: .3em;
+    background: $white;
+    transition: all .2s ease-in-out;
+    .image_wrapper, .info, .price {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: .9em;
+      color: $secondary;
+    }
+    .image_wrapper {
+      width: auto;
+      height: 100%;
+      img {
+        display: block;
+        width: 60px;
+        margin: 0 auto;
+        border-radius: .25em;
+      }
+    }
+    .info {
+      line-height: 1.25;
+      width: 640px;
+      padding-left: 25px;
+      .drink_info {
+        font-weight: 700;
+        font-size: 1.3em;
+        a {
+          display: inline;
+          color: $main;
+        }
+        .drink_name {
+          &:hover {
+            color: $highlight_1;
+          }
+        }
+        .alcohol_name {
+          &:hover {
+            color: $highlight_2;
+          }
+        }
+        .place_name {
+          &:hover {
+            color: $highlight_3;
+          }
+        }
+      }
+      .alcohol_brand {
+        display: block;
+        a {
+          position: relative;
+          color: $highlight_3;
+        }
+      }
+      .address_info {
+        a {
+          &:first-child {
+            color: $highlight_3;
+          }
+          color: $highlight_3;
+        }
+      }
+    }
+    .price {
+      position: relative;
+      white-space: nowrap;
+      font-size: 2em;
+      font-weight: 700;
+      color: $main;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #list {
+    .listing {
+      width: 94%;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .main_header {
+    margin: 3em 0;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    h1 {
+      float: none;
+    }
+  }
+
+  // .nav {
+  //   float: none;
+  //   text-align: center;
+  //   a {
+  //     margin: 0 .5em;
+  //   }
+  // }
+
+  #list {
+    .listing {
+      width: 93%;
+      .image_wrapper {
+        width: 55px;
+        height: 100%;
+        margin: auto;
+        img {
+          width: 50px;
+          margin: 0;
+        }
+      }
+      .info {
+        padding-left: 10px;
+        .drink_info {
+          font-size: 1.1em;
+        }
+      }
+      .price {
+        font-size: 1.8em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .filter {
+    font-size: 1em;
+    margin-bottom: 1em;
+    line-height: 0;
+  }
+
+  #list {
+    .listing {
+      width: 90%;
+      .image_wrapper {
+        width: auto;
+        height: 100%;
+        img {
+          vertical-align: middle;
+          width: 45px;
+          margin: auto;
+        }
+      }
+      .info {
+        padding-left: 12px;
+        padding-right: 10px;
+        .drink_info {
+          font-size: 1.1em;
+        }
+      }
+      .price {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+

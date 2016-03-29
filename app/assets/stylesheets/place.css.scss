@@ -1,0 +1,27 @@
+#place {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 5em;
+  .place_name {
+    font-size: 2.5em;
+    color: $main;
+    margin-bottom: 0;
+  }
+  a {
+    display: block;
+    margin-top: 0.3em;
+    margin-bottom: 0.6em;
+    color: $highlight_3;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #place {
+    .place_name {
+      margin-bottom: 0;
+    }
+  }
+}
