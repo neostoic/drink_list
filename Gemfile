@@ -20,7 +20,6 @@ group :development do
   gem 'sqlite3', '~> 1.3', '>= 1.3.11'
   gem 'web-console', '~> 2.0'
   gem 'spring', '~> 1.6', '>= 1.6.4'
-  gem 'pry', '~> 0.10.3'
 end
 
 group :production do
