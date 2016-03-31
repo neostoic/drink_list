@@ -30,7 +30,7 @@
         <%= image_tag(drink.recipe.image) %>
       </div>
       <div class="info">
-        <div class="drink_info"><%= link_to drink.recipe.name, recipe_path(drink.recipe), class: "drink_name" %> with <%= link_to drink.alcohol.name, alcohol_path(drink.alcohol), class: "alcohol_name" %> at <%= link_to drink.place.name, place_path(drink.place), class: "place_name" %></div>
+        <div class="drink_info"><%= drink.size %> <%= link_to drink.recipe.name, recipe_path(drink.recipe), class: "drink_name" %> with <%= link_to drink.alcohol.name, alcohol_path(drink.alcohol), class: "alcohol_name" %> at <%= link_to drink.place.name, place_path(drink.place), class: "place_name" %></div>
       </div>
       <span class="price"><%= number_to_currency(drink.price) %></span>
     </div>
