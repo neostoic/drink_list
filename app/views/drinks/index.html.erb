@@ -1,27 +1,4 @@
-<div class="filter">
-  <div class="dropdown">
-    <button id="recipe_btn" class="dropbtn">Recipes <i class="fa fa-angle-down"></i></button>
-    <div class="dropdown-content">
-    <%= link_to "All", drinks_path %>
-      <% @recipes.each do |recipe| %>
-        <%= link_to "#{image_tag(recipe.image, size: '30')} #{recipe.name}".html_safe, drinks_path(recipe: recipe) %>
-      <% end %>
-    </div>
-  </div>
-  <div class="dropdown">
-    <button id="alcohol_btn" class="dropbtn">Alcohols <i class="fa fa-angle-down"></i></button>
-    <div class="dropdown-content">
-    <%= link_to "All", drinks_path %>
-      <% @alcohols.each do |alcohol| %>
-        <%= link_to alcohol.name, drinks_path(alcohol: alcohol) %>
-      <% end %>
-    </div>
-  </div>
-</div>
 
-<!--   <% @alcohols.each do |alcohol| %>
-    <li><%= link_to alcohol.name, drinks_path(alcohol: alcohol) %></li>
-  <% end %> -->
 
 <div id="list">
   <% @drinks.each do |drink| %>

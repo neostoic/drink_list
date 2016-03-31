@@ -5,7 +5,4 @@ class Drink < ActiveRecord::Base
 
   validates :place_id,   presence: true
   validates :price,      presence: true
-
-  scope :recipe,  -> (recipe)  { where recipe:  recipe }
-  scope :alcohol, -> (alcohol) { where alcohol: alcohol }
 end

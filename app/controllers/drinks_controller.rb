@@ -2,12 +2,7 @@ class DrinksController < ApplicationController
   before_action :find_drink, except: [:index, :new, :create]
 
   def index
-    @recipes  = Recipe.all
-    @alcohols = Alcohol.all
-    @drinks = Drink.where(nil)
-    @drinks = @drinks.recipe(params[:recipe]) if params[:recipe].present?
-    @drinks = @drinks.alcohol(params[:alcohol]) if params[:alcohol].present?
-    @drinks = @drinks.order("price asc")
+    @drinks = Drink.all.order("price asc")
 
     respond_to do |format|
       format.html
