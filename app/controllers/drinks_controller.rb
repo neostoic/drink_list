@@ -1,8 +1,9 @@
 class DrinksController < ApplicationController
-  before_action :find_drink, except: [:index, :new, :create]
+  before_action :find_drink, only: [:show, :edit, :update, :destroy]
 
   def index
-    @drinks = Drink.all.order("price asc")
+    query = params[:q].presence || "*"
+    @drinks = Drink.search(query, suggest: true, limit: 1000)
 
     respond_to do |format|
       format.html
@@ -47,6 +48,10 @@ class DrinksController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_path
+  end
+
+  def autocomplete
+    render json: Drink.search(params[:term], fields: [{recipe_name: :text_start}], limit: 5).map { |d| d.recipe.name }.uniq
   end
 
   private

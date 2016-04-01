@@ -44,83 +44,27 @@ a {
   }
 }
 
-.paint_red {
-  color: $highlight_1;
+.filter {
+  margin-bottom: 2em;
+  input {
+    border: 1px solid $border;
+    border-radius: .2em;
+    min-width: 200px;
+    min-height: 25px;
+    font-size: .9em;
+    font-family: "brandon-grotesque";
+    color: $main;
+    padding-left: 0.5em;
+    &:placeholder-shown {
+      color: #988;
+    }
+  }
+  p {
+    margin-top: 0.4em;
+    color: $secondary;
+    font-size: .9em;
+  }
 }
-
-
-// .filter {
-//   margin-left: 0;
-//   text-align: left;
-//   margin-bottom: 2em;
-
-//   #recipe_btn {
-//     background-color: $highlight_1;
-//   }
-
-//   #alcohol_btn {
-//     background-color: $highlight_2;
-//   }
-//   .dropbtn {
-//       margin-right: 10px;
-//       width: 100px;
-//       font-family: "brandon-grotesque";
-//       color: white;
-//       padding: 10px 16px;
-//       font-size: 16px;
-//       border: none;
-//       cursor: pointer;
-//       border-radius: 3px;
-//   }
-
-//   /* The container <div> - needed to position the dropdown content */
-//   .dropdown {
-//       text-align: left;
-//       position: relative;
-//       display: inline-block;
-//   }
-
-//   /* Dropdown Content (Hidden by Default) */
-//   .dropdown-content {
-//       z-index: 10;
-//       display: none;
-//       position: absolute;
-//       background-color: #f9f9f9;
-//       min-width: 230px;
-//       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-//   }
-
-//   /* Links inside the dropdown */
-//   .dropdown-content a {
-//     min-height: 20px;
-//     vertical-align: middle;
-//     margin: auto;
-//     color: $main;
-//     padding: 12px 16px;
-//     text-decoration: none;
-//     display: block;
-//     img {
-//       vertical-align: middle;
-//       margin-right: 0.5em;
-//     }
-
-//   }
-
-//   /* Change color of dropdown links on hover */
-//   .dropdown-content a:hover {
-//     background-color: $white
-//   }
-
-//   /* Show the dropdown menu on hover */
-//   .dropdown:hover .dropdown-content {
-//       display: block;
-//   }
-
-//   /* Change the background color of the dropdown button when the dropdown content is shown */
-//   .dropdown:hover .dropbtn {
-//       background-color: $highlight_1;
-//   }
-// }
 
 #list {
   position: relative;

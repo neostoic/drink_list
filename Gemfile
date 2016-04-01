@@ -6,11 +6,13 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '~> 3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails', '~> 4.1', '>= 4.1.1'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'turbolinks', '~> 2.5', '>= 2.5.3'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
 gem 'normalize-rails', '~> 3.0', '>= 3.0.3'
+gem 'searchkick', '~> 0.9.1'
 
 group :development, :test do
   gem 'byebug', '~> 8.2', '>= 8.2.2'

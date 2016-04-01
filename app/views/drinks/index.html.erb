@@ -1,3 +1,11 @@
+<div class="filter">  
+  <%= form_tag drinks_path, method: :get do %>
+    <%= text_field_tag :q, nil, placeholder: "Search drinks, places or alcohols" %>
+  <% end %>
+  <% if @drinks.suggestions.any? %>
+    <p>Did you mean: <%= @drinks.suggestions.first %>?</p>
+  <% end %>
+</div>
 
 
 <div id="list">
