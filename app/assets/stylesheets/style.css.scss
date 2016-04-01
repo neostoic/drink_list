@@ -41,26 +41,13 @@ a {
     .logo_second_word {
       font-weight: 400;
     }
-    a {
-      color: $main;
-      .red {
-        &:hover {
-          color: $highlight_1;
-        }
-      }
-      .yellow {
-        &:hover {
-          color: $highlight_2;
-        }
-      }
-      .light_blue {
-        &:hover {
-          color: $highlight_3;
-        }
-      }
-    }
   }
 }
+
+.paint_red {
+  color: $highlight_1;
+}
+
 
 // .filter {
 //   margin-left: 0;
